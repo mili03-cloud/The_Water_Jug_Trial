@@ -1,0 +1,188 @@
+/* =======================================================
+   GAME CONTROLS — top bar, inputs, all buttons
+   ======================================================= */
+
+/* ================= CONTROLS PANEL ================= */
+.controls {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 24px;
+    z-index: 10;
+    background: rgba(4, 12, 40, 0.88);
+    border-bottom: 1px solid rgba(80, 150, 255, 0.3);
+    border-top: 1px solid rgba(60, 120, 255, 0.15);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(100, 160, 255, 0.12);
+    backdrop-filter: blur(8px);
+}
+
+.controls label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    color: rgba(140, 190, 255, 0.9);
+    text-transform: uppercase;
+    margin-right: 2px;
+}
+
+.controls input {
+    width: 58px;
+    padding: 6px 8px;
+    background: rgba(8, 20, 60, 0.85);
+    border: 1px solid rgba(80, 140, 255, 0.45);
+    border-radius: 6px;
+    color: #c8e4ff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.controls input:focus {
+    border-color: rgba(100, 160, 255, 0.8);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(80, 130, 255, 0.3);
+}
+
+.controls input::placeholder {
+    color: rgba(100, 150, 255, 0.4);
+    font-size: 0.75rem;
+}
+
+/* stat display */
+.controls-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    color: rgba(160, 210, 255, 0.9);
+}
+
+/* ================= CONTROL BUTTONS ================= */
+.ctrl-btn {
+    padding: 7px 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+/* Set button */
+#setBtn {
+    background: rgba(30, 60, 130, 0.7);
+    color: #a0c8ff;
+    border: 1px solid rgba(80, 140, 255, 0.3);
+    box-shadow: 0 2px 10px rgba(30, 60, 180, 0.2);
+}
+
+#setBtn:hover {
+    background: rgba(40, 80, 170, 0.85);
+    box-shadow: 0 4px 18px rgba(40, 100, 255, 0.3);
+    color: #c8e8ff;
+}
+
+/* Solve / Oracle button */
+#solveAnimateBtn {
+    background: linear-gradient(135deg, #0a5a50, #0aaa96);
+    color: #c0fff8;
+    box-shadow: 0 3px 14px rgba(0, 160, 140, 0.3);
+    border: 1px solid rgba(0, 200, 180, 0.25);
+}
+
+#solveAnimateBtn:hover:not(:disabled) {
+    box-shadow: 0 5px 22px rgba(0, 200, 180, 0.45);
+    filter: brightness(1.1);
+}
+
+#solveAnimateBtn:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* Clear button */
+#clearBtn {
+    background: rgba(60, 20, 20, 0.6);
+    color: #ffb0a0;
+    border: 1px solid rgba(200, 80, 60, 0.3);
+}
+
+#clearBtn:hover {
+    background: rgba(100, 30, 20, 0.8);
+    box-shadow: 0 4px 18px rgba(200, 60, 40, 0.25);
+    color: #ffccc0;
+}
+
+/* Menu button — gold accent */
+a.ctrl-btn {
+    background: linear-gradient(135deg, rgba(160, 110, 20, 0.75), rgba(200, 150, 30, 0.65));
+    color: #ffe4a0;
+    border: 1px solid rgba(220, 170, 60, 0.5);
+    box-shadow: 0 2px 12px rgba(180, 130, 0, 0.25);
+    display: inline-block;
+}
+
+a.ctrl-btn:hover {
+    background: linear-gradient(135deg, rgba(200, 140, 25, 0.9), rgba(240, 180, 40, 0.8));
+    box-shadow: 0 4px 20px rgba(220, 160, 0, 0.4);
+    color: #fff5cc;
+}
+
+/* ================= JUG ACTION BUTTONS ================= */
+.jug-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.jug-btn {
+    width: 140px;
+    padding: 9px 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(80, 160, 255, 0.55);
+    border-radius: 6px;
+    background: rgba(8, 20, 60, 0.88);
+    color: rgba(200, 230, 255, 1);
+    cursor: pointer;
+    transition: all 0.22s;
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(120, 180, 255, 0.12);
+    text-shadow: 0 0 8px rgba(100, 180, 255, 0.5);
+}
+
+.jug-btn:hover {
+    background: rgba(18, 50, 130, 0.95);
+    border-color: rgba(100, 180, 255, 0.8);
+    color: #e0f2ff;
+    box-shadow:
+        0 4px 20px rgba(30, 80, 220, 0.4),
+        0 0 14px rgba(60, 140, 255, 0.25),
+        inset 0 1px 0 rgba(150, 200, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.jug-btn:active {
+    transform: translateY(0);
+}
