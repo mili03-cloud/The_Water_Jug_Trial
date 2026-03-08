@@ -1,0 +1,16 @@
+/* =======================================================
+   WATER JUG TRIALS — Game Page Master Stylesheet
+   All styles are split into focused files in css/ folder:
+
+   css/game-base.css       — body, game container, title, back link
+   css/game-controls.css   — top bar, inputs, all buttons
+   css/game-jugs.css       — tap, jug area, jugs, water, animations
+   css/game-ai-panel.css   — Oracle Scroll AI panel (ai_mode only)
+   css/game-modals.css     — confetti, goal win modal
+   ======================================================= */
+
+@import url('css/game-base.css');
+@import url('css/game-controls.css');
+@import url('css/game-jugs.css');
+@import url('css/game-ai-panel.css');
+@import url('css/game-modals.css');

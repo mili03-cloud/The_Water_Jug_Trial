@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Water Jug Trials</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="landing.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a1535">
+    <link rel="apple-touch-icon" href="icon-512.png">
+</head>
+
+<body>
+
+    <!-- ===================== STAR FIELD ===================== -->
+    <div class="stars" id="stars"></div>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+
+        <div class="rune-ring-outer"></div>
+        <div class="rune-ring"></div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">An Ancient Arcane Trial</p>
+
+            <div class="jug-hero-wrap">
+                <!-- SVG jug illustration -->
+                <svg class="jug-svg" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#60d0ff" stop-opacity="0.85" />
+                            <stop offset="100%" stop-color="#0070cc" stop-opacity="0.95" />
+                        </linearGradient>
+                        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#b0d8ff" stop-opacity="0.35" />
+                            <stop offset="100%" stop-color="#3080cc" stop-opacity="0.15" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- jug body -->
+                    <path d="M15 18 Q12 22 12 75 Q12 88 40 92 Q68 88 68 75 Q68 22 65 18 Z" fill="url(#glass)"
+                        stroke="rgba(100,180,255,0.6)" stroke-width="1.5" />
+                    <!-- water fill -->
+                    <clipPath id="jugClip">
+                        <path d="M15 18 Q12 22 12 75 Q12 88 40 92 Q68 88 68 75 Q68 22 65 18 Z" />
+                    </clipPath>
+                    <rect x="10" y="50" width="60" height="45" fill="url(#water)" clip-path="url(#jugClip)"
+                        opacity="0.8" />
+                    <!-- shimmer -->
+                    <path d="M22 30 Q24 50 22 70" stroke="rgba(200,240,255,0.4)" stroke-width="2"
+                        stroke-linecap="round" />
+                    <!-- spout -->
+                    <path d="M65 22 Q75 18 78 14 Q76 20 70 24" fill="rgba(100,180,255,0.3)"
+                        stroke="rgba(100,180,255,0.5)" stroke-width="1.2" />
+                    <!-- handle -->
+                    <path d="M12 35 Q2 40 2 60 Q2 72 12 72" fill="none" stroke="rgba(100,180,255,0.45)"
+                        stroke-width="2.5" stroke-linecap="round" />
+                    <!-- rim -->
+                    <ellipse cx="40" cy="18" rx="25" ry="6" fill="none" stroke="rgba(140,200,255,0.55)"
+                        stroke-width="1.5" />
+                </svg>
+                <div class="drip"></div>
+                <div class="drip"></div>
+                <div class="drip"></div>
+            </div>
+
+            <h1>The Water<br>Jug Trials</h1>
+            <p class="hero-sub">Mystic Puzzle &amp; Arcane AI</p>
+            <div class="hero-divider"></div>
+            <p>An ancient challenge of measure and wisdom.<br>
+                Seek the sacred volume — by your own hand, or let the arcane intelligence guide the way.</p>
+        </div>
+
+        <a href="#menu" class="scroll-hint">
+            <span>Begin</span>
+            <div class="chevrons">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+            </div>
+        </a>
+    </section>
+
+    <!-- ===================== MENU ===================== -->
+    <section class="menu-section" id="menu">
+
+        <div class="magic-circle"></div>
+
+        <h2>Choose Thy Path</h2>
+        <p class="menu-subtitle">Two roads through the ancient trial</p>
+
+        <div class="mode-cards">
+
+            <!-- Manual Mode -->
+            <a href="manual_mode.html" class="mode-card manual">
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+                <div class="card-inner">
+                    <span class="mode-icon">⚗️</span>
+                    <h3>Manual Mode</h3>
+                    <div class="card-divider"></div>
+                    <p>Take up the vessels and pour by your own will. Fill, empty, and transfer — the answer lies in
+                        your hands alone.</p>
+                    <span class="mode-btn">Enter &amp; Play</span>
+                </div>
+            </a>
+
+            <!-- AI Mode -->
+            <a href="ai_mode.html" class="mode-card ai">
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+                <div class="card-inner">
+                    <span class="mode-icon">🔮</span>
+                    <h3>AI Oracle Mode</h3>
+                    <div class="card-divider"></div>
+                    <p>Invoke the arcane Oracle. It shall divine the shortest path and manifest the solution before your
+                        very eyes.</p>
+                    <span class="mode-btn">Summon Oracle</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <div class="footer">✦ &nbsp; The Water Jug Trials &nbsp; ✦ &nbsp; An Ancient Arcane Puzzle &nbsp; ✦</div>
+
+    <script src="landing.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+
+</html>

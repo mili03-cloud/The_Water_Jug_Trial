@@ -1,0 +1,99 @@
+/* =======================================================
+   GAME AI PANEL — Oracle Scroll solution box
+   ======================================================= */
+
+.ai-solution-box {
+    position: absolute;
+    right: 24px;
+    top: 100px;
+    width: 230px;
+    background: rgba(4, 12, 40, 0.92);
+    border: 1px solid rgba(80, 150, 255, 0.35);
+    border-top: 2px solid rgba(100, 170, 255, 0.5);
+    border-radius: 12px;
+    padding: 16px 16px 14px;
+    box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(40, 100, 255, 0.1),
+        inset 0 1px 0 rgba(120, 180, 255, 0.12);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+/* corner accents */
+.ai-solution-box::before,
+.ai-solution-box::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+}
+
+.ai-solution-box::before {
+    top: 6px;
+    left: 6px;
+    border-top: 1px solid rgba(100, 170, 255, 0.4);
+    border-left: 1px solid rgba(100, 170, 255, 0.4);
+}
+
+.ai-solution-box::after {
+    bottom: 6px;
+    right: 6px;
+    border-bottom: 1px solid rgba(100, 170, 255, 0.4);
+    border-right: 1px solid rgba(100, 170, 255, 0.4);
+}
+
+.ai-solution-box h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(160, 210, 255, 0.95);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(80, 150, 255, 0.3);
+    text-align: center;
+}
+
+#aiStats {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    color: rgba(120, 210, 255, 0.9);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#aiSteps {
+    max-height: 320px;
+    overflow-y: auto;
+    font-size: 0.78rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(180, 215, 255, 0.85);
+}
+
+#aiSteps div {
+    padding: 3px 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+#aiSteps div:hover {
+    background: rgba(60, 120, 255, 0.12);
+}
+
+#aiSteps::-webkit-scrollbar {
+    width: 4px;
+}
+
+#aiSteps::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#aiSteps::-webkit-scrollbar-thumb {
+    background: rgba(80, 140, 255, 0.35);
+    border-radius: 2px;
+}

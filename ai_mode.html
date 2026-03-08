@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=920">
+    <title>Water Jug Trials — Oracle AI Mode</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="css/game-base.css">
+    <link rel="stylesheet" href="css/game-controls.css">
+    <link rel="stylesheet" href="css/game-jugs.css">
+    <link rel="stylesheet" href="css/game-ai-panel.css">
+    <link rel="stylesheet" href="css/game-modals.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a1535">
+    <link rel="apple-touch-icon" href="icon-512.png">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <!-- back link -->
+        <a href="index.html" class="back-link">Return to Hall</a>
+
+        <!-- page title -->
+        <div class="page-title">✦ Oracle AI Trial ✦</div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <label>Vessel A</label>
+            <input id="capAInput" type="number" min="1" placeholder="size">
+
+            <label>Vessel B</label>
+            <input id="capBInput" type="number" min="1" placeholder="size">
+
+            <label>Goal</label>
+            <input id="goalInput" type="number" min="1" placeholder="target">
+
+            <button class="ctrl-btn" id="setBtn">Set</button>
+            <button class="ctrl-btn" id="solveAnimateBtn">Invoke Oracle</button>
+            <button class="ctrl-btn" id="clearBtn">Clear</button>
+            <a href="index.html" class="ctrl-btn" style="text-decoration:none;">&#8592; Menu</a>
+        </div>
+
+        <!-- TAP -->
+        <img src="tap_image.png" class="tap" id="tap">
+
+        <!-- JUG AREA -->
+        <div class="center-area">
+
+            <!-- Jug A -->
+            <div class="jug-box">
+                <div class="jug-label">Vessel A</div>
+                <div class="jug" id="jugA">
+                    <div class="water" id="waterA"></div>
+                </div>
+                <div class="amount" id="amountA">— / —</div>
+            </div>
+
+            <!-- Jug B -->
+            <div class="jug-box">
+                <div class="jug-label">Vessel B</div>
+                <div class="jug" id="jugB">
+                    <div class="water" id="waterB"></div>
+                </div>
+                <div class="amount" id="amountB">— / —</div>
+            </div>
+
+        </div>
+
+        <!-- ORACLE SOLUTION PANEL -->
+        <div class="ai-solution-box">
+            <h3>Oracle Scroll</h3>
+            <div id="aiStats">Awaiting invocation…</div>
+            <div id="aiSteps">Set the vessels and invoke the Oracle to reveal the sacred path.</div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="sounds.js"></script>
+    <script src="state.js"></script>
+    <script src="animations.js"></script>
+    <script src="ai_bfs.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+
+</body>
+
+</html>

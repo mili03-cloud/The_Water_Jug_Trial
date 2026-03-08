@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=920">
+    <title>Water Jug Trials — Manual Mode</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="css/game-base.css">
+    <link rel="stylesheet" href="css/game-controls.css">
+    <link rel="stylesheet" href="css/game-jugs.css">
+    <link rel="stylesheet" href="css/game-modals.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a1535">
+    <link rel="apple-touch-icon" href="icon-512.png">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <!-- back link -->
+        <a href="index.html" class="back-link">Return to Hall</a>
+
+        <!-- page title -->
+        <div class="page-title">✦ Manual Trial ✦</div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <label>Vessel A</label>
+            <input id="capAInput" type="number" min="1" placeholder="size">
+
+            <label>Vessel B</label>
+            <input id="capBInput" type="number" min="1" placeholder="size">
+
+            <label>Goal</label>
+            <input id="goalInput" type="number" min="1" placeholder="target">
+
+            <button class="ctrl-btn" id="setBtn">Set</button>
+
+            <div class="controls-right">
+                <span>Goal: <strong id="goalDisplay">—</strong></span>
+                <span>Moves: <strong id="moveCount">0</strong></span>
+                <button class="ctrl-btn" id="clearBtn">Clear</button>
+                <a href="index.html" class="ctrl-btn" style="text-decoration:none;">&#8592; Menu</a>
+            </div>
+        </div>
+
+        <!-- TAP -->
+        <img src="tap_image.png" class="tap" id="tap">
+
+        <!-- JUG AREA -->
+        <div class="center-area">
+
+            <!-- Jug A -->
+            <div class="jug-box">
+                <div class="jug-label">Vessel A</div>
+                <div class="jug" id="jugA">
+                    <div class="water" id="waterA"></div>
+                </div>
+                <div class="amount" id="amountA">— / —</div>
+                <div class="jug-actions">
+                    <button class="jug-btn" id="fillABtn">Fill A</button>
+                    <button class="jug-btn" id="pourABtn">Pour A → B</button>
+                    <button class="jug-btn" id="emptyABtn">Empty A</button>
+                </div>
+            </div>
+
+            <!-- Jug B -->
+            <div class="jug-box">
+                <div class="jug-label">Vessel B</div>
+                <div class="jug" id="jugB">
+                    <div class="water" id="waterB"></div>
+                </div>
+                <div class="amount" id="amountB">— / —</div>
+                <div class="jug-actions">
+                    <button class="jug-btn" id="fillBBtn">Fill B</button>
+                    <button class="jug-btn" id="pourBBtn">Pour B → A</button>
+                    <button class="jug-btn" id="emptyBBtn">Empty B</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="sounds.js"></script>
+    <script src="state.js"></script>
+    <script src="animations.js"></script>
+    <script src="operations.js"></script>
+    <script src="drag.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+
+</body>
+
+</html>
